@@ -1,0 +1,6 @@
+1. Variables in C:
+    In C programming language, a variable is a user-defined or a user-readable custom name assigned to a memory location. Variables hold a value that can be modified and reused many times during the program execution.
+
+    A variable can be an alphabet or digits and start with an underscore, but you cannot declare a keyword as a variable name.
+
+    Now that you have understood the fundamental definition of the Variables in C, go through the declaration part.

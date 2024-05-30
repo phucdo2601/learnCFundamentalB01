@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.inc": "php",
+        "*.base": "html",
+        "*.cgi": "perl",
+        "*.html.tx": "html",
+        "stdlib.h": "c",
+        "stdio.h": "c"
+    }
+}
