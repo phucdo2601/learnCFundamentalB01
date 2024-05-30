@@ -4,3 +4,91 @@
     A variable can be an alphabet or digits and start with an underscore, but you cannot declare a keyword as a variable name.
 
     Now that you have understood the fundamental definition of the Variables in C, go through the declaration part.
+
+2. Datatypes in C:
+Data Types in C
+Last Updated : 28 Sep, 2023
+Each variable in C has an associated data type. It specifies the type of data that the variable can store like integer, character, floating, double, etc. Each data type requires different amounts of memory and has some specific operations which can be performed over it. The data type is a collection of data with values having fixed values, meaning as well as its characteristics.
+
+The data types in C can be classified as follows:
+
+Types
+
+Description
+
+Primitive Data Types	Primitive data types are the most basic data types that are used for representing simple values such as integers, float, characters, etc.
+User Defined Data Types	The user-defined data types are defined by the user himself.
+Derived Types	The data types that are derived from the primitive or built-in datatypes are referred to as Derived Data Types.
+Data Types in C
+
+Different data types also have different ranges up to which they can store numbers. These ranges may vary from compiler to compiler. Below is a list of ranges along with the memory requirement and format specifiers on the 32-bit GCC compiler.
+
+
+Data Type 
+ 	Size (bytes) 
+ 	Range
+ 	Format Specifier 
+ 
+short int 
+ 	2 
+ 	-32,768 to 32,767 
+ 	%hd 
+ 
+unsigned short int 
+ 	2 
+ 	0 to 65,535 
+ 	%hu 
+ 
+unsigned int 
+ 	4 
+ 	0 to 4,294,967,295 
+ 	%u 
+ 
+int 
+ 	4 
+ 	-2,147,483,648 to 2,147,483,647 
+ 	%d 
+ 
+long int 
+ 	4 
+ 	-2,147,483,648 to 2,147,483,647 
+ 	%ld 
+ 
+unsigned long int 
+ 	4 
+ 	0 to 4,294,967,295 
+ 	%lu 
+ 
+long long int 
+ 	8 
+ 	-(2^63) to (2^63)-1 
+ 	%lld 
+ 
+unsigned long long int 
+ 	8 
+ 	0 to 18,446,744,073,709,551,615 
+ 	%llu 
+ 
+signed char 
+ 	1 
+ 	-128 to 127 
+ 	%c 
+ 
+unsigned char 
+ 	1 
+ 	0 to 255 
+ 	%c 
+ 
+float 
+ 	4 
+ 	1.2E-38 to 3.4E+38	%f 
+ 
+double 
+ 	8 
+ 	1.7E-308 to 1.7E+308	%lf 
+ 
+long double 
+ 	16 
+ 	3.4E-4932 to 1.1E+4932	%Lf 
+ 
+Note: The long, short, signed and unsigned are datatype modifier that can be used with some primitive data types to change the size or length of the datatype.
