@@ -97,3 +97,8 @@ Note: The long, short, signed and unsigned are datatype modifier that can be use
 It is often used in console-based programs to capture input from the user without echoing the character. The function 
 is defined in the conio.h header file, which is available in some compilers like Turbo C and 
 Borland C, but it is not part of the standard C library and thus not available in many modern C environments.
+
+3. fputc() is a function in C that writes a single character to a specified file stream. 
+It is part of the standard input/output library and is defined in the <stdio.h> header file. 
+This function is useful for writing characters to files, one character at a time.
+
