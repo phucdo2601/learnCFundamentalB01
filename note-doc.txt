@@ -92,3 +92,8 @@ long double
  	3.4E-4932 to 1.1E+4932	%Lf 
  
 Note: The long, short, signed and unsigned are datatype modifier that can be used with some primitive data types to change the size or length of the datatype.
+
+2. getch() is a function in C that reads a single character from the keyboard but does not display it on the screen. 
+It is often used in console-based programs to capture input from the user without echoing the character. The function 
+is defined in the conio.h header file, which is available in some compilers like Turbo C and 
+Borland C, but it is not part of the standard C library and thus not available in many modern C environments.
