@@ -102,3 +102,13 @@ Borland C, but it is not part of the standard C library and thus not available i
 It is part of the standard input/output library and is defined in the <stdio.h> header file. 
 This function is useful for writing characters to files, one character at a time.
 
+
+3. fputs() is a function in C that writes a string to a specified file stream. 
+It is part of the standard input/output library and is defined in the <stdio.h> header file. 
+This function is used to write strings to files or to the standard output.
+
+4. The gets() function in C is used to read a line of text from the standard input (usually the keyboard) and store it in a string. 
+It is defined in the <stdio.h> header file. However, gets() is considered dangerous and is deprecated due to the risk of buffer overflow, 
+which can lead to security vulnerabilities. Instead, safer alternatives like fgets() should be used.
+
+
