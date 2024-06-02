@@ -112,3 +112,12 @@ It is defined in the <stdio.h> header file. However, gets() is considered danger
 which can lead to security vulnerabilities. Instead, safer alternatives like fgets() should be used.
 
 
+5. fgetc() function in C is used to read a single character from a specified file stream. 
+It is defined in the <stdio.h> header file and is part of the standard input/output library. 
+This function is commonly used when reading files character by character.
+
+6. fgetc() function in C is used to read a single character from a specified file stream. 
+It is defined in the <stdio.h> header file and is part of the standard input/output library. 
+This function is commonly used when reading files character by character.
+
+
