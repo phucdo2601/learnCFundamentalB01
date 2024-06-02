@@ -1,0 +1,5 @@
+This is the test comment line for reading file in c.
+
+where
+you
+can learn anything about it.

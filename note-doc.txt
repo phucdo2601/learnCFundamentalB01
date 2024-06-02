@@ -122,3 +122,7 @@ This function is commonly used when reading files character by character.
 
 7. fscanf() function in C is used to read formatted input from a file. It is part of the standard input/output library and is defined in the <stdio.h> header file. 
 The fscanf() function works similarly to scanf(), but it reads input from the specified file stream instead of standard input.
+
+8. fgets() function in C is used to read a string from a specified input stream. It reads characters from the stream until either a newline character ('\n') is encountered, 
+the end-of-file (EOF) is reached, or the specified number of characters has been read. The fgets() function is defined in the <stdio.h> header file and is commonly used 
+for reading lines of text from a file or standard input.
