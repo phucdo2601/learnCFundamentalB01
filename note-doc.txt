@@ -120,4 +120,5 @@ This function is commonly used when reading files character by character.
 It is defined in the <stdio.h> header file and is part of the standard input/output library. 
 This function is commonly used when reading files character by character.
 
-
+7. fscanf() function in C is used to read formatted input from a file. It is part of the standard input/output library and is defined in the <stdio.h> header file. 
+The fscanf() function works similarly to scanf(), but it reads input from the specified file stream instead of standard input.
