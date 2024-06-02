@@ -126,3 +126,6 @@ The fscanf() function works similarly to scanf(), but it reads input from the sp
 8. fgets() function in C is used to read a string from a specified input stream. It reads characters from the stream until either a newline character ('\n') is encountered, 
 the end-of-file (EOF) is reached, or the specified number of characters has been read. The fgets() function is defined in the <stdio.h> header file and is commonly used 
 for reading lines of text from a file or standard input.
+
+9. rewind() function in C is used to set the file position indicator for a given file stream to the beginning of the file. It is defined in the <stdio.h> header file. 
+This function effectively allows you to start reading or writing to a file from the beginning after you have already read or written some data.
