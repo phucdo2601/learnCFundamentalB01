@@ -171,6 +171,8 @@ void update() {
     {
         if (st.rno == rnoSearch)
         {
+            st.total = 0;
+            st.per = 0;
             foundUpdate = 1;
             fflush(stdin);
 
@@ -208,6 +210,95 @@ void update() {
     }
 }
 
+void delete_rec() {
+
+}
+
+void sort_total_on_screen() {
+    Student *st1;
+    Student st2;
+    FILE *fp;
+    fp = fopen("myStudents.txt", "r");
+    fseek(fp, 0, SEEK_END);
+
+    int n = ftell(fp) / sizeof(Student);
+    rewind(fp);
+    st1 = (Student*) calloc(n, sizeof(Student));
+
+    for (int i = 0; i < n; i++)
+    {
+        fread(&st1[i], sizeof(Student), 1, fp);
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (st1[i].total  < st1[j].total)
+            {
+                st2 = st1[i];
+                st1[i] = st1[j];
+                st1[j] = st2;
+            }
+        }
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("\n%-5d%-20s", st1[i].rno, st1[i].name);
+        for (int j = 0; j < 3; j++)
+        {
+            printf("%10.2lf", st1[i].sub[j].mark);
+        }
+        printf("%7.2lf%7.2lf", st1[i].total, st1[i].per);
+    }
+    fclose(fp);
+}
+
+void sort_total_in_file() {
+    Student *st1;
+    Student st2;
+    FILE *fp;
+    fp = fopen("myStudents.txt", "r");
+    fseek(fp, 0, SEEK_END);
+
+    int n = ftell(fp) / sizeof(Student);
+    rewind(fp);
+    st1 = (Student*) calloc(n, sizeof(Student));
+    fclose(fp);
+
+    for (int i = 0; i < n; i++)
+    {
+        fread(&st1[i], sizeof(Student), 1, fp);
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (st1[i].total  < st1[j].total)
+            {
+                st2 = st1[i];
+                st1[i] = st1[j];
+                st1[j] = st2;
+            }
+        }
+    }
+
+    fp = fopen("myStudents.txt", "w");
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("\n%-5d%-20s", st1[i].rno, st1[i].name);
+        for (int j = 0; j < 3; j++)
+        {
+            printf("%10.2lf", st1[i].sub[j].mark);
+        }
+        printf("%7.2lf%7.2lf", st1[i].total, st1[i].per);
+    }
+    fclose(fp);
+}
+
 int main()
 {
     int ch;
@@ -222,6 +313,9 @@ int main()
         printf("\n4.NO OF RECORDS");
         printf("\n5.SEARCH");
         printf("\n6.UPDATE");
+        printf("\n7.DELETE");
+        printf("\n8.SORT BY TOTAL DESC - ON SCREEN");
+        printf("\n9.SORT BY TOTAL DESC - IN FILE");
         printf("\n0.EXIT");
 
         printf("\nEnter your choice: ");
@@ -251,6 +345,18 @@ int main()
             break;
         case 6:
             update();
+            break;
+
+        case 7:
+            delete_rec();
+            break;
+
+        case 8:
+            sort_total_on_screen();
+            break;
+
+        case 9:
+            sort_total_in_file();
             break;
         }
     } while (ch != 0);
