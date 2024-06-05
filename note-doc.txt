@@ -129,3 +129,10 @@ for reading lines of text from a file or standard input.
 
 9. rewind() function in C is used to set the file position indicator for a given file stream to the beginning of the file. It is defined in the <stdio.h> header file. 
 This function effectively allows you to start reading or writing to a file from the beginning after you have already read or written some data.
+
+10. In C programming, fflush() is a standard library function used to flush a stream. This means that it forces a write of all buffered output for a given output or update stream. It can also be used to flush the input buffer, although this usage is less common and not recommended because it is not portable across all platforms.
+
+11. In C programming, calloc is a standard library function used for dynamic memory allocation. It stands for "contiguous allocation" and is used to allocate memory for an array of elements, initializing all bytes in the allocated memory to zero.
+
+12. 
+In C programming, fseek is a standard library function used to move the file position indicator to a specific location within a file. This allows you to read from or write to different parts of a file without sequentially reading through its contents.
