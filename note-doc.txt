@@ -136,3 +136,9 @@ This function effectively allows you to start reading or writing to a file from 
 
 12. 
 In C programming, fseek is a standard library function used to move the file position indicator to a specific location within a file. This allows you to read from or write to different parts of a file without sequentially reading through its contents.
+
+13. In C programming, realloc is a function used to resize a previously allocated block of memory. It is particularly useful when you need to adjust the size of an array or other dynamically allocated memory area without losing the existing data.
+Related Functions
+malloc: Allocates a block of memory.
+calloc: Allocates memory for an array and initializes it to zero.
+free: Frees previously allocated memory.
