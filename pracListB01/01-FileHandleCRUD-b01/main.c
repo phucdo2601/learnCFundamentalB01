@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * Define struct with typedef
@@ -211,7 +212,46 @@ void update() {
 }
 
 void delete_rec() {
+    Student st;
+    FILE *fp;
+    FILE *fp1;
+    int j;
+    int rnoSearch;
+    int foundUpdate = 0;
+    fp = fopen("myStudents.txt", "r");
+    fp1 = fopen("temp.txt", "w");
+    printf("\nEnter rollno to delete: \n");
+    scanf("%d", &rnoSearch);
 
+    while (fread(&st, sizeof(Student), 1, fp))
+    {
+        if (st.rno == rnoSearch)
+        {
+            foundUpdate = 1;
+        } else {
+            fwrite(&st, sizeof(Student), 1, fp1);
+        }
+        
+    }
+    fclose(fp);
+    fclose(fp1);
+
+    if (foundUpdate)
+    {
+        fp1 = fopen("temp.txt", "r");
+        fp = fopen("myStudents.txt", "w");
+
+        while (fread(&st, sizeof(Student), 1, fp1))
+        {
+            fwrite(&st, sizeof(Student), 1, fp);
+        }
+        
+
+        fclose(fp);
+        fclose(fp1);
+    } else {
+        printf("\nRecord not found!");
+    }
 }
 
 void sort_total_on_screen() {
@@ -265,12 +305,12 @@ void sort_total_in_file() {
     int n = ftell(fp) / sizeof(Student);
     rewind(fp);
     st1 = (Student*) calloc(n, sizeof(Student));
-    fclose(fp);
 
     for (int i = 0; i < n; i++)
     {
         fread(&st1[i], sizeof(Student), 1, fp);
     }
+    fclose(fp);
 
     for (int i = 0; i < n; i++)
     {
@@ -286,6 +326,48 @@ void sort_total_in_file() {
     }
 
     fp = fopen("myStudents.txt", "w");
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("\n%-5d%-20s", st1[i].rno, st1[i].name);
+        for (int j = 0; j < 3; j++)
+        {
+            printf("%10.2lf", st1[i].sub[j].mark);
+        }
+        printf("%7.2lf%7.2lf", st1[i].total, st1[i].per);
+        fwrite(&st1[i], sizeof(Student), 1, fp);
+    }
+    fclose(fp);
+}
+
+void sort_by_name_on_screen() {
+    Student *st1;
+    Student st2;
+    FILE *fp;
+    fp = fopen("myStudents.txt", "r");
+    fseek(fp, 0, SEEK_END);
+
+    int n = ftell(fp) / sizeof(Student);
+    rewind(fp);
+    st1 = (Student*) calloc(n, sizeof(Student));
+
+    for (int i = 0; i < n; i++)
+    {
+        fread(&st1[i], sizeof(Student), 1, fp);
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (strcmp(st1[i].name, st1[j].name) > 0)
+            {
+                st2 = st1[i];
+                st1[i] = st1[j];
+                st1[j] = st2;
+            }
+        }
+    }
 
     for (int i = 0; i < n; i++)
     {
@@ -316,6 +398,7 @@ int main()
         printf("\n7.DELETE");
         printf("\n8.SORT BY TOTAL DESC - ON SCREEN");
         printf("\n9.SORT BY TOTAL DESC - IN FILE");
+        printf("\n10.SORT BY NAME - ON SCREEN");
         printf("\n0.EXIT");
 
         printf("\nEnter your choice: ");
@@ -357,6 +440,10 @@ int main()
 
         case 9:
             sort_total_in_file();
+            break;
+
+        case 10:
+            sort_by_name_on_screen();
             break;
         }
     } while (ch != 0);
